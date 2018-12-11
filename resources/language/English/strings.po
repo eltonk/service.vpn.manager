@@ -828,3 +828,7 @@ msgstr ""
 msgctxt "#32239"
 msgid "Windscribe"
 msgstr ""
+
+msgctxt "#32400"
+msgid "PureVPN"
+msgstr ""

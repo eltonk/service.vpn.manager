@@ -1,4 +1,4 @@
-VPN Manager for OpenVPN
+VPN Manager for OpenVPN - A Cloned Zomboided VPN Manager Plugin
 =======================
 
 This add-on is a service for Kodi that allows the user to vary the level of
@@ -15,5 +15,6 @@ VPN profiles.
 Control of the VPN is also possible via a remote control button or hot key,
 allowing the user to manually cycle between connections.
 
-Full instructions can be found on the [GitHub wiki for this
-project](https://github.com/Zomboided/service.vpn.manager/wiki)
+This clone adds the PureVPN service as a VPN provider. 
+
+Full instructions can be found on [GitHub original Zomboided project's Wiki](https://github.com/Zomboided/service.vpn.manager/wiki)

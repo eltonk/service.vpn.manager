@@ -1,3 +1,7 @@
+v1.0.0
+- Clone from zomboided v5.0.7
+- Add PureVPN
+
 v5.0.7
 - Fix some issues with paths that contain spaces within ovpn files
 
