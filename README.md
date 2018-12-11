@@ -1,4 +1,4 @@
-VPN Manager for OpenVPN - A Cloned Zomboided VPN Manager Plugin
+VPN Manager for OpenVPN - A Cloned Zomboided VPN Manager Plugin by eltonk
 =======================
 
 This add-on is a service for Kodi that allows the user to vary the level of
