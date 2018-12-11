@@ -241,9 +241,6 @@ if __name__ == '__main__' and not running():
                 resetVPNConfig(addon, 1)
                 xbmcgui.Dialog().ok(addon_name, "Thanks for using " + addon_short + "! V4.0 downloads and updates VPN files separately, making updates quicker. Please re-validate your connections to download the files for your VPN provider.")
             reset_everything = False
-            if addon.getSetting("vpn_provider_validated") == "PureVPN" or addon.getSetting("vpn_provider") == "PureVPN":
-                xbmcgui.Dialog().ok(addon_name, "Support for PureVPN has been removed as they now support their own add-on.  See https://www.purevpn.com/blog/kodi-vpn/")
-                reset_everything = True
             if not isCustom() and last_version < 500:
                 if addon.getSetting("vpn_provider_validated") == "UserDefined" and checkUserDefined("NordVPN"):
                     xbmcgui.Dialog().ok(addon_name, "Support for NordVPN has been re-introduced to use the NordVPN API to dynamically manage connections.  Please consider using built in support.")
