@@ -29,7 +29,7 @@ import string
 import os.path
 import time
 from utility import debugTrace, errorTrace, infoTrace, newPrint
-from platform import getUserDataPath, fakeConnection
+from platform import getAddonPath, getUserDataPath, fakeConnection
 from common import getFriendlyProfileName
 
 MINIMUM_LEVEL = "400"
@@ -76,6 +76,15 @@ def generateAll():
     return
     
     
+
+def getAddonPathWrapper(path):
+# This function resets the VPN profiles to the standard VPN Manager install
+# location as per OpenELEC, or to the platform install location
+force_default_install = fakeConnection()    
+if force_default_install:
+    return "/storage/.kodi/addons/service.vpn.monitor/" + path        
+else:
+    return getAddonPath(True, path)
     
 ### Functions to generate VPN provider files useable by VPN Mgr    
     
@@ -736,6 +745,8 @@ def generatePureVPN():
             if line.startswith("remote "):
                 _, server, port = line.split()
         output_line = geo + "," + server + "," + proto + "," + port + "," + tags + "\n"
+        #Deal with the RESOLVE tag
+        output_line = output_line.replace("#RESOLVE", ' \'/bin/bash -c \"python ' + getAddonPathWrapper(vpn_provider + "/" + "dnsLeak.py") +'"\'')
         location_file.write(output_line)
     location_file.close()
     generateMetaData("PureVPN", MINIMUM_LEVEL)
